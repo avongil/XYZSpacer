@@ -57,8 +57,9 @@ reader = csv.reader(csvfile, dialect)
 # ... process CSV file contents here ...
 reader = csv.reader(open(infile), delimiter=dialect.delimiter, quoting=csv.QUOTE_NONE)
 
-
-for row in reader:
+csvfile2 = open(outfile, 'a', newline='') #this opens the file
+with csvfile2 as csvfile2: 
+ for row in reader:
     colnum = 0
 
     for col in row:
@@ -77,36 +78,30 @@ for row in reader:
                 lastZ=float(Z)     #removes extra space on first line.
                 
             colnum += 1
-     
+
     if tolerance < (abs(abs(lastX)-abs(X))) and watchcol == 0:
       #if lastX != X and watchcol == 0: #X variable and Colum 0
         if verbose == 'Y':
            print("---------- NEW X PASS ----------")
-        csvfile2 = open(outfile, 'a', newline='') #this opens the file
-        with csvfile2 as csvfile2:
-            xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
-            #xyzspacer.writerow("---------- NEW X PASS ----------") 
-            xyzspacer.writerow(" ")
+           xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
+           #xyzspacer.writerow("---------- NEW X PASS ----------") 
+           xyzspacer.writerow(" ")
         spacenum += 1  
     if tolerance < (abs(abs(lastY)-abs(Y))) and watchcol == 1:            
      #if lastY != Y and watchcol == 1:  #Y variable and Colum 1
         if verbose == 'Y':
            print("---------- NEW Y PASS ----------")
-        csvfile2 = open(outfile, 'a', newline='') #this opens the file
-        with csvfile2 as csvfile2:
-            xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
-            #xyzspacer.writerow("---------- NEW Y PASS ----------") 
-            xyzspacer.writerow(" ")
+           xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
+           #xyzspacer.writerow("---------- NEW Y PASS ----------") 
+           xyzspacer.writerow(" ")
         spacenum += 1  
     if tolerance < (abs(abs(lastZ)-abs(Z))) and watchcol == 2:
      #if lastZ != Z and watchcol == 2: #Z variable and Colum 2
         if verbose == 'Y':    
            print("---------- NEW Z PASS ----------")
-        csvfile2 = open(outfile, 'a', newline='') #this opens the file
-        with csvfile2 as csvfile2:
-            xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
-            #xyzspacer.writerow("---------- NEW Z PASS ----------") 
-            xyzspacer.writerow(" ")
+           xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
+           #xyzspacer.writerow("---------- NEW Z PASS ----------") 
+           xyzspacer.writerow(" ")
         spacenum += 1    
     if verbose == 'Y':        
        print("XYZ FROM VARIABLES: ", X, Y, Z) #writes to terminal
