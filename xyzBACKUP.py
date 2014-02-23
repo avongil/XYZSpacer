@@ -106,7 +106,7 @@ with csvfile2 as csvfile2:
     if verbose == 'Y':        
        print("XYZ FROM VARIABLES: ", X, Y, Z) #writes to terminal
     xyzspacer = csv.writer(csvfile2, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    xyzspacer.writerow([X, Y, Z]) #writes to file #<------ ? error
+    xyzspacer.writerow([X, Y, Z]) #writes to file xyz locations
     	
     lastX=float(X) #Saves the last x value
     lastY=float(Y) #Saves the last y value
