@@ -83,43 +83,25 @@ with csvfile2 as csvfile2:
       #if lastX != X and watchcol == 0: #X variable and Colum 0
         if verbose == 'Y':
            print("---------- NEW X PASS ----------")
-<<<<<<< HEAD
-           xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
-           #xyzspacer.writerow("---------- NEW X PASS ----------") 
-           xyzspacer.writerow(" ")
-=======
         xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
         #xyzspacer.writerow("---------- NEW X PASS ----------") 
         xyzspacer.writerow(" ")
->>>>>>> Fast Version
         spacenum += 1  
     if tolerance < (abs(abs(lastY)-abs(Y))) and watchcol == 1:            
      #if lastY != Y and watchcol == 1:  #Y variable and Colum 1
         if verbose == 'Y':
            print("---------- NEW Y PASS ----------")
-<<<<<<< HEAD
-           xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
-           #xyzspacer.writerow("---------- NEW Y PASS ----------") 
-           xyzspacer.writerow(" ")
-=======
         xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
         #xyzspacer.writerow("---------- NEW Y PASS ----------") 
         xyzspacer.writerow(" ")
->>>>>>> Fast Version
         spacenum += 1  
     if tolerance < (abs(abs(lastZ)-abs(Z))) and watchcol == 2:
      #if lastZ != Z and watchcol == 2: #Z variable and Colum 2
         if verbose == 'Y':    
            print("---------- NEW Z PASS ----------")
-<<<<<<< HEAD
-           xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
-           #xyzspacer.writerow("---------- NEW Z PASS ----------") 
-           xyzspacer.writerow(" ")
-=======
         xyzspacer = csv.writer(csvfile2, delimiter=' ', quotechar=' ', quoting=csv.QUOTE_MINIMAL)
         #xyzspacer.writerow("---------- NEW Z PASS ----------") 
         xyzspacer.writerow(" ")
->>>>>>> Fast Version
         spacenum += 1    
     if verbose == 'Y':        
        print("XYZ FROM VARIABLES: ", X, Y, Z) #writes to terminal
